@@ -446,8 +446,8 @@
         <div class="content">
             <!-- Hero Section -->
             <div class="hero">
-                <h1>Happy Valentine's Day 💝</h1>
-                <p>To the love of my life</p>
+                <h1>Happy Valentine's Day ❤️</h1>
+                <h1 style="margin-top: -10px;">Reva</h1>
             </div>
 
             <!-- Main Love Message -->
@@ -560,7 +560,7 @@
 
             <!-- Interactive Hearts -->
             <div class="interactive-section">
-                <p>Click anywhere below to create hearts!</p>
+                <p>Click anywhere below</p>
                 <div class="click-area" id="clickArea"></div>
             </div>
 
@@ -619,11 +619,11 @@
         // Anywhere Door functionality
         let doorOpen = false;
         const doorMessages = [
-            "Until that day comes, know that you're always in my heart 💝",
-            "Distance means nothing when someone means everything 💕",
-            "Every moment apart makes our reunions even sweeter ❤️",
-            "My love travels the distance to be with you always 💗",
-            "One day, we won't need an Anywhere Door... we'll be together forever 💑"
+            "How many times have we wished we had this? Would've made it so much easier to come see you in person.",
+            "If only this was real, I'd be there right now wishing you Happy Valentine's Day face to face.",
+            "We've joked about this so many times. One day we won't need it anymore.",
+            "Imagine just opening this and being together whenever we want. Soon enough, we won't need to imagine.",
+            "Every time we say goodbye, I wish this thing was real. Until then, you're always in my heart."
         ];
 
         function toggleDoor() {
@@ -643,22 +643,23 @@
             }
         }
 
-        // Interactive click hearts
+        // Interactive click hearts, tiramisu, stars, and confetti
         const clickArea = document.getElementById('clickArea');
+        const emojis = ['💗', '💖', '💕', '💝', '❤️', '💘', '🍰', '⭐', '✨', '🎆', '🎇', '🌟'];
+        
         clickArea.addEventListener('click', function(e) {
-            const heart = document.createElement('div');
-            heart.className = 'click-heart';
-            const hearts = ['💗', '💖', '💕', '💝', '❤️', '💘'];
-            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            const element = document.createElement('div');
+            element.className = 'click-heart';
+            element.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
             
             const rect = clickArea.getBoundingClientRect();
-            heart.style.left = (e.clientX - rect.left) + 'px';
-            heart.style.top = (e.clientY - rect.top) + 'px';
+            element.style.left = (e.clientX - rect.left) + 'px';
+            element.style.top = (e.clientY - rect.top) + 'px';
             
-            clickArea.appendChild(heart);
+            clickArea.appendChild(element);
             
             setTimeout(() => {
-                heart.remove();
+                element.remove();
             }, 2000);
         });
 
@@ -688,3 +689,4 @@
     </script>
 </body>
 </html>
+
